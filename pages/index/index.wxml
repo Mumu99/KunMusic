@@ -1,0 +1,64 @@
+<!-- 主页基础数据 -->
+<view class="content-wrap">
+  <!-- 轮播 -->
+  <view class="page-section page-section-spacing swiper">
+    <swiper indicator-dots="{{swiperContent.indicatorDots}}" autoplay="{{swiperContent.autoplay}}" interval="{{swiperContent.interval}}" duration="{{swiperContent.duration}}" indicator-color="{{	swiperContent.indicatorColor	}}" indicator-active-color=" {{swiperContent.indicatorActivecolor}}" circular="{{swiperContent.circular}}" class="page-swiper">
+      <swiper-item wx:for="{{imageList}}" wx:key="bannerId">
+        <image class="swiper-item-image" src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 五个图标 -->
+  <view class="nav-container">
+    <view class="nav-item" hover-class="none" hover-stop-propagation="false">
+      <text class="iconfont icon-zan"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="nav-item" hover-class="none" hover-stop-propagation="false">
+      <text class="iconfont icon-gedan"></text>
+      <text>我的歌单</text>
+    </view>
+    <view class="nav-item" hover-class="none" hover-stop-propagation="false">
+      <text class="iconfont icon-ziyuan121"></text>
+      <text>排行榜</text>
+    </view>
+    <view class="nav-item" hover-class="none" hover-stop-propagation="false">
+      <text class="iconfont icon-diantai"></text>
+      <text>电台</text>
+    </view>
+    <view class="nav-item" hover-class="none" hover-stop-propagation="false">
+      <text class="iconfont icon-airudiantubiaohuizhi-zhuanqu_zhibojian"></text>
+      <text>直播</text>
+    </view>
+  </view>
+  <!-- 每日推荐 -->
+  <view class="recommend-container">
+    <!-- 头部 -->
+    <navHeader title="推荐歌曲" nav="为你精心推荐" />
+    <!-- 图片内容 -->
+    <scroll-view class="recommend-main" enable-flex scroll-x>
+      <view wx:for="{{recommendList}}" wx:key="id" wx:for-item="recom" class="main-song" hover-class="none">
+        <image class="song-image" src="{{recom.picUrl}}"></image>
+        <text class="song-desc">{{recom.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 排行榜区域 -->
+  <view class="top-list" hover-class="none" hover-stop-propagation="false">
+    <!-- 头部 -->
+    <navHeader title="排行榜" nav="热歌风向标" />
+    <!-- 内容 -->
+    <swiper class="top-list-swiper" next-margin="50rpx">
+      <swiper-item wx:for="{{topList}}" wx:key="name">
+        <view class="swiper-item">
+          <view class="title">{{item.name}} ></view>
+          <view class="music-item" wx:for="{{item.tracks}}" wx:key="id" wx:for-item="musicItem">
+            <image class="music-item-image" src="{{musicItem.al.picUrl}}"></image>
+            <text class="music-item-count">{{index+1}}</text>
+            <text class="music-item-name">{{musicItem.name}}</text>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

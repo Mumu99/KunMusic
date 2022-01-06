@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/personal/personal",
+    "pages/index/index",
+    "pages/video/video"
+  ],
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#ec4141",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/static/image/tabs/tab-home.png",
+        "selectedIconPath": "/static/image/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "/static/image/tabs/tab-video.png",
+        "selectedIconPath": "/static/image/tabs/tab-viedo-current.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "/static/image/tabs/tab-my.png",
+        "selectedIconPath": "/static/image/tabs/tab-my-current.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ec4141",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "困不困音乐"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

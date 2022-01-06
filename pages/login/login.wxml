@@ -1,0 +1,26 @@
+<view class="login-container">
+  <view class="login-title">
+    <text class="login-bg">LOGIN</text>
+    <text class="login-text">欢迎回来！</text>
+  </view>
+  <view class="login-form">
+    <view class="form-phone">
+      <text class="phone-text">手机号码</text>
+      <input type="text" placeholder="请输入手机号码" id="phone" bind:input="setUser" />
+    </view>
+    <view class="form-password">
+      <text class="password-text">密码</text>
+      <input password type="text" id="password" placeholder="请输入密码" bind:input="setUser" />
+    </view>
+    <view class="form-submit">
+      <button bind:tap="submit">登录</button>
+    </view>
+    <view class="form-forget">
+      <text class="forget-text">忘记密码?</text>
+    </view>
+  </view>
+  <view class="footer">
+    <text>还没有账号？</text>
+    <text class="footer-sign-up">马上注册</text>
+  </view>
+</view>

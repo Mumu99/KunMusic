@@ -1,0 +1,7 @@
+<view class="recommend-header">
+  <text class="recommend-title">{{title}}</text>
+  <view class="recommend-more">
+    <text class="title" selectable="false" space="false" decode="false">{{nav}}</text>
+    <text class="more" selectable="false" space="false" decode="false">查看更多</text>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+/*
+ * @Author: v_polixiong
+ * @Date: 2022-01-05 16:39:20
+ * @LastEditTime: 2022-01-06 11:54:48
+ * @LastEditors: your name
+ * @FilePath: \music\pages\personal\personal.wxs
+ */
+var startY = 0; // 手指起始坐标
+var moveY = 0; // 手指移动的坐标
+var moveDistance = 0; // 手指移动的距离
+function touchStart(event, ins) {
+  // 获取手指的起始坐标
+  startY = event.touches[0].clientY;
+  ins.selectComponent(".cover-container").setStyle({
+    transition: ''
+  });
+}
+function touchMove(event, ins) {
+  // 获取手指移动坐标
+  moveY = event.touches[0].clientY;
+  moveDistance = moveY - startY;
+  if (moveDistance <= 0) return;
+  if (moveDistance >= 70) moveDistance = 70;
+  ins.selectComponent(".cover-container").setStyle({
+    transform: "translate3d(0," + moveDistance + "px,0)",
+  });
+}
+
+function touchEnd(event, ins) {
+  ins.selectComponent(".cover-container").setStyle({
+    transform: "translate3d(0,0,0)",
+    transition: 'transform .5s linear'
+  });
+}
+module.exports = {
+  touchStart: touchStart,
+  touchMove: touchMove,
+  touchEnd: touchEnd,
+};

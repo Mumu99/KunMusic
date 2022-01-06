@@ -1,0 +1,28 @@
+.recommend-header {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 0;
+}
+
+.recommend-header .recommend-title {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.recommend-header .recommend-more {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recommend-header .recommend-more .title {
+  font-size: 32rpx;
+}
+
+.recommend-header .recommend-more .more {
+  font-size: 28rpx;
+  border: 1px solid #666;
+  border-radius: 16rpx;
+  padding: 8rpx 18rpx;
+}
